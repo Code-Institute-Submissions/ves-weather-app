@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 
+if os.environ.get('DEVELOPMENT'):
+    development = True
+else:
+    development = False
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'n^sma4f*(gs3&thn_lyab*c!+hz^n@u_rbb97g+(&4swutp9(r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
 ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '0550b9f3bb10472a915c402288dcb1a4.vfs.cloud9.us-east-1.amazonaws.com', 'ves-weather-app.herokuapp.com']
 
@@ -74,16 +79,18 @@ WSGI_APPLICATION = 'weatherapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 
-DATABASES = {
-    'default': dj_database_url.parse("postgres://pyzutbuoorfbhq:bbd04cbd04541cccd9ba2fe84ab9a7055800ddac1c058e9100c7e28979789411@ec2-54-247-72-30.eu-west-1.compute.amazonaws.com:5432/d5vudm7ors7e2k")
-}
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse("postgres://pyzutbuoorfbhq:bbd04cbd04541cccd9ba2fe84ab9a7055800ddac1c058e9100c7e28979789411@ec2-54-247-72-30.eu-west-1.compute.amazonaws.com:5432/d5vudm7ors7e2k")
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
