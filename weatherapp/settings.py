@@ -26,7 +26,7 @@ SECRET_KEY = 'n^sma4f*(gs3&thn_lyab*c!+hz^n@u_rbb97g+(&4swutp9(r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '0550b9f3bb10472a915c402288dcb1a4.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'), '0550b9f3bb10472a915c402288dcb1a4.vfs.cloud9.us-east-1.amazonaws.com', 'ves-weather-app.herokuapp.com']
 
 
 # Application definition
