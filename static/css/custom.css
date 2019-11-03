@@ -3,6 +3,20 @@ nav {
 }
 
 footer {
-    height: 100px;
+    height: 200px;
     background-color: orange;
 }
+
+.weathercentral {
+    height: 300px;
+    width: 300px;
+    border-style: solid;
+    border-width: thin;
+    margin-bottom: 20px;
+}
+
+.searchbox {
+    margin-bottom: 10px;
+    /*margin-left: -50px;*/
+}
+
