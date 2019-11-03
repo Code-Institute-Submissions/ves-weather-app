@@ -1,7 +1,6 @@
 import requests
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
-from .models import City
 from .forms import Form
 
 # Create your views here.
