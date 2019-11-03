@@ -22,11 +22,30 @@
             <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item">
+            <a class="nav-link" href="#">Merchandise</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="#">Donate!</a>
         </li>
     </ul>
 </nav>
 <h1>Homepage</h1>
+.
+<form method="GET" action="userhomepage">
+    {{ Form }}
+    <button type="submit"></button>
+</form>
+
+<div class="container text-center weathercentral">
+    <div class="text-left">
+        <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png"></img>
+    </div>
+    <span><h2>{{ city_weather.city|title }}</h2></span>
+    <br />
+    <span class="temperature">{{ city_weather.temperature }}°F</span>
+    <br /> <span class="description">{{ city_weather.description }}</span>
+</div>
+
 
 <div>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
