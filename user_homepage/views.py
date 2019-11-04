@@ -8,10 +8,10 @@ def user_homepage(request, name="userhomepage"):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=38e4fec38e509c018629074ac1754906'
     
     if request.method == "POST":
-        Form = Form
+        form = Form(request.POST)
         city = request.POST["city_name"]
     else:
-        Form = Form()
+        form = Form()
         
     r = requests.get(url.format(city)).json()
             
