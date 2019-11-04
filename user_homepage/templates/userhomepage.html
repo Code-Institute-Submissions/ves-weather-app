@@ -31,7 +31,9 @@
 </nav>
 <h1>Homepage</h1>
 
-<form method="GET" action="userhomepage">
+<form method="POST" action="userhomepage">
+    {% csrf_token %}
+    
     {{ Form }}
     <button type="submit"></button>
 </form>
