@@ -9,6 +9,7 @@ def user_homepage(request, name="userhomepage"):
     
     if request.method == "POST":
         form = Form(request.POST)
+    if form.is_valid():
         city = request.POST["city_name"]
     else:
         form = Form()
