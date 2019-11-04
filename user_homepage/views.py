@@ -6,11 +6,8 @@ from .forms import Form
 # Create your views here.
 def user_homepage(request, name="userhomepage"):
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=38e4fec38e509c018629074ac1754906'
-    if request.method=="GET":
-        Form = Form
-        city = request.get["city_name"]
-    else:
-        Form = Form
+    
+    city = 'London'
         
     r = requests.get(url.format(city)).json()
             
