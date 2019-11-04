@@ -9,8 +9,8 @@ def user_homepage(request, name="userhomepage"):
     
     if request.method == "POST":
         form = Form(request.POST)
-    if form.is_valid():
-        city = request.POST["city_name"]
+        if form.is_valid():
+            city = form.cleaned_data["city_name"]
     else:
         form = Form()
         
@@ -24,7 +24,7 @@ def user_homepage(request, name="userhomepage"):
     }
             
     result = {'city_weather' : city_weather}
-    return render(request, 'userhomepage.html', result, {'Form': Form})
+    return render(request, 'userhomepage.html', result, {'Form': form})
     
 # def post(self, request):
 
