@@ -11,20 +11,29 @@ def user_homepage(request, name="userhomepage"):
         form = Form(request.POST)
         if form.is_valid():
             city = form.cleaned_data["city_name"]
+            r = requests.get(url.format(city)).json()
+            city_weather = {
+                'city': city,
+                'temperature' : r['main']['temp'],
+                'description' : r['weather'][0]['description'],
+                'icon' :  r['weather'][0]['icon'],
+            }
+            result = {'city_weather' : city_weather}
+            
     else:
         form = Form()
+        city = "London"
+        r = requests.get(url.format(city)).json()
+        city_weather = {
+                'city': city,
+                'temperature' : r['main']['temp'],
+                'description' : r['weather'][0]['description'],
+                'icon' :  r['weather'][0]['icon'],
+            }
+        result = {'city_weather' : city_weather}
         
-    r = requests.get(url.format(city)).json()
-            
-    city_weather = {
-        'city': city,
-        'temperature' : r['main']['temp'],
-        'description' : r['weather'][0]['description'],
-        'icon' :  r['weather'][0]['icon'],
-    }
-            
-    result = {'city_weather' : city_weather}
-    return render(request, 'userhomepage.html', result, {'Form': form})
+    
+    return render(request, 'userhomepage.html', {'Form': form, 'result': result})
     
 # def post(self, request):
 
