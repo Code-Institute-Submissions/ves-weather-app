@@ -18,7 +18,7 @@ def user_homepage(request, name="userhomepage"):
                 'description' : r['weather'][0]['description'],
                 'icon' :  r['weather'][0]['icon'],
             }
-            result = {'city_weather' : city_weather}
+            result = {'city_weather' : city_weather, 'Form': form}
             
     else:
         form = Form()
@@ -30,10 +30,10 @@ def user_homepage(request, name="userhomepage"):
                 'description' : r['weather'][0]['description'],
                 'icon' :  r['weather'][0]['icon'],
             }
-        result = {'city_weather' : city_weather}
+        result = {'city_weather' : city_weather, 'Form': form}
         
     
-    return render(request, 'userhomepage.html', {'Form': form, 'result': result})
+    return render(request, 'userhomepage.html', result)
     
 # def post(self, request):
 
