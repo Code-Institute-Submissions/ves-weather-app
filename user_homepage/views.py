@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 from .forms import Form
 from django.contrib import auth
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def user_homepage(request, name="userhomepage"):
@@ -35,7 +36,7 @@ def user_homepage(request, name="userhomepage"):
         
     
     return render(request, 'userhomepage.html', result)
-    
+
 def logout(request):
     """Log the user out"""
     auth.logout(request)
