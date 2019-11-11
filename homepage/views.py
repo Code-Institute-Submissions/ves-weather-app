@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth
-from homepage.forms import UserLoginForm
+from homepage.forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
 def index(request):
@@ -29,5 +29,7 @@ def login(request):
 
 def registration(request):
     """Render the registration page"""
-    return render(request, 'registration.html')
+    registration_form = UserRegistrationForm()
+    return render(request, 'registration.html', {
+        "registration_form": registration_form})
     
