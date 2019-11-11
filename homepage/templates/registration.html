@@ -1,2 +1,9 @@
 <h1>Registration Page</h1>
 <p>Already have an account? <a href="{% url 'login' %}">Log in!</a></p>
+<br />
+
+<form method="POST">
+        {% csrf_token %}
+        {{ registration_form.as_p }}
+        <button type="submit">Register</button>
+</form>
