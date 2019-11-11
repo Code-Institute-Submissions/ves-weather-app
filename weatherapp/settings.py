@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     #APPS
     'user_homepage',
     'homepage',
+    'products',
 ]
 
 MIDDLEWARE = [
