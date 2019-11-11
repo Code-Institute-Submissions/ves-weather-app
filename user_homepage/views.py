@@ -3,10 +3,13 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.http import HttpResponseRedirect
 from .forms import Form
 from django.contrib import auth
+from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def user_homepage(request, name="userhomepage"):
+    user = User.objects.get(email=request.user.email)
+    profile = {'user' : user}
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=38e4fec38e509c018629074ac1754906'
     
     if request.method == "POST":
@@ -35,7 +38,7 @@ def user_homepage(request, name="userhomepage"):
         result = {'city_weather' : city_weather, 'Form': form}
         
     
-    return render(request, 'userhomepage.html', result)
+    return render(request, 'userhomepage.html', result, profile)
 
 def logout(request):
     """Log the user out"""
