@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from user_homepage.views import user_homepage, logout
 from homepage.views import index, login, registration
-from products.views import all_products
+from donations.views import donations
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -27,5 +28,5 @@ urlpatterns = [
     url(r'^logout/$', logout, name="logout"),
     url(r'^login/$', login, name="login"),
     url(r'^registration/$', registration, name="registration"),
-    url('^products/$', all_products, name="products"),
+    url(r'^donate/$', donations, name="donations")
 ]
