@@ -11,8 +11,17 @@
     <p>Already have an account? <a href="{% url 'login' %}">Log in!</a></p>
     <br />
     <form method="POST">
-            {% csrf_token %} 
-            {{ registration_form.as_p }}
+            {% csrf_token %}
+            {% for field in registration_form %}
+            <table>
+                <td>
+                    <tr>
+                    {{ field }}
+                    </tr>
+                </td>
+            </table>
+            {% endfor %}
+            <br />
             <button type="submit">Register</button>
     </form>
 </div>
