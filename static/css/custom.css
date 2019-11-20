@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 nav {
     height: 100px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    background-color: black;
+}
+
+/* Targeting the navbar menu items */
+a.nav-link {
+    color: white;
 }
 
 footer {
