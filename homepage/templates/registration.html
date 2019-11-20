@@ -16,12 +16,15 @@
             <table>
                 <td>
                     <tr>
-                    {{ field }}
+                    {{ field.label_tag }}
+                    </tr>
+                    <br />
+                    <tr>
+                        {{ field }}
                     </tr>
                 </td>
             </table>
             {% endfor %}
-            <br />
             <button type="submit">Register</button>
     </form>
 </div>
