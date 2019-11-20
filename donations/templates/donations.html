@@ -1,7 +1,7 @@
-<h2>Donate!</h2>
-<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="{{ key }}"
-    data-description="A Django Charge"
-    data-amount="500"
-    data-locale="auto">
-</script>
+{% extends 'base.html' %} {% block donations %}
+<div class="text-center">
+    <h2>Donate!</h2>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="A Django Charge" data-amount="500" data-locale="auto">
+    </script>
+</div>
+{% endblock %}
