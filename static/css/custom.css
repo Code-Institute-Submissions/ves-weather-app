@@ -16,6 +16,10 @@ footer {
     background-color: orange;
 }
 
+i {
+    color: black;
+}
+
 .weathercentral {
     height: 300px;
     width: 300px;
