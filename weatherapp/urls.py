@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.conf.urls.static import static
 from user_homepage.views import user_homepage, logout
 from homepage.views import index, login, registration
-from donations.views import donations
+from donations import views as donation_views
 
 
 urlpatterns = [
@@ -28,5 +28,5 @@ urlpatterns = [
     url(r'^logout/$', logout, name="logout"),
     url(r'^login/$', login, name="login"),
     url(r'^registration/$', registration, name="registration"),
-    url(r'^donate/$', donations, name="donations")
+    url(r'^donate/$', donation_views.DonationPageView.as_view(), name="donations")
 ]
