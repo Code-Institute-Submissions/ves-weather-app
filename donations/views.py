@@ -3,8 +3,6 @@ from django.conf import settings
 from django.views.generic.base import TemplateView
 
 # Create your views here.
-def donations(request):
-    return render(request, 'donations.html')
     
 class DonationPageView(TemplateView):
     template_name = 'donations.html'
