@@ -1,23 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
 nav {
-    height: 100px;
     font-family: 'Bebas Neue', cursive;
     font-size: 20px;
     background-color: black;
 }
 
-/* Targeting the navbar menu items */
-a.nav-link {
-    color: white;
-}
-
 footer {
     height: 200px;
     background-color: orange;
+    font-family: 'Bebas Neue', cursive;
 }
 
 i {
     color: black;
+}
+
+ul > li > a {
+    color: white;
 }
 
 .weathercentral {
@@ -32,4 +31,3 @@ i {
     margin-bottom: 10px;
     /*margin-left: -50px;*/
 }
-
