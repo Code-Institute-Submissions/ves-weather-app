@@ -12,24 +12,24 @@
     <title>The Weather App</title>
 </head>
 
+<body>
 <nav class="navbar navbar-expand-sm">
-    <ul class="navbar-nav column-reverse">
-        <li class="nav-item hvr-grow">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-        </li>
-        <li>
-            <a class="nav-link hvr-grow" href="{% url 'user_homepage' %}">Search a city</a>
-        </li>
-        <li class="nav-item hvr-grow">
-            <a class="nav-link" href="#">Contact Us</a>
-        </li>
-        <li class="nav-item hvr-grow">
-            <a class="nav-link" href="#">About Us</a>
-        </li>
-        <li class="nav-item hvr-grow">
-            <a class="nav-link" href="{% url 'donations' %}">Donate!</a>
-        </li>
-    </ul>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav column-reverse text-white">
+            <li class="nav-item">
+                <a class="nav-link hvr-grow" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link hvr-grow" href="{% url 'user_homepage' %}">Search a city</a>
+            </li>
+            <li class="nav-item hvr-grow">
+                <a class="nav-link" href="{% url 'donations' %}">Donate!</a>
+            </li>
+        </ul>
+    </div>
 </nav>
 <br />
 <br /> {% block donations %}{% endblock %} {% block weather %}{% endblock %} {% block weatherinfotext %}{% endblock %}
@@ -44,4 +44,12 @@
         <i class="fa fa-instagram fa-3x"></i>
         <i class="fa fa-linkedin fa-3x"></i>
     </div>
+    <br />
+    <div class="container-fluid">
+    <p><i class="fa fa-copyright">&nbsp;</i>Veselin Dimitrov's Weather App</p>
+    </div>
 </footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
