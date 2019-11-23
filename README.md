@@ -61,8 +61,7 @@ To further advance the user experience, the results also shows an icon of the cu
 The main feature of the application is the live weather search tool, which is built using the Open Weather API.
 This is the code that handles it:
 
-`
-def user_homepage(request, name="userhomepage"):
+`def user_homepage(request, name="userhomepage"):
     user = User.objects.get(email=request.user.email)
     profile = {'user' : user}
     url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=38e4fec38e509c018629074ac1754906'
@@ -93,8 +92,7 @@ def user_homepage(request, name="userhomepage"):
         result = {'city_weather' : city_weather, 'Form': form}
         
     
-    return render(request, 'userhomepage.html', result, profile)
-`
+    return render(request, 'userhomepage.html', result, profile)`
 
 ## Deployment
 The application has been uploaded to both GitHub and Heroku. It is being hosted on Heroku.
