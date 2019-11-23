@@ -48,7 +48,6 @@ The main feature of the web-based application is the weather search tool. The us
 
 To further advance the user experience, the results also shows an icon of the current weahter on the top-left corner, alongside with the temperature and text-description of the weather.
 
-
 ## Language and Frameworks
 - Django
 - HTML5
