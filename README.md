@@ -12,6 +12,8 @@ The backend is Python, since Django is a Python-based framework.
 
 It uses Postgresql to store data.
 
+**The project is split into three apps - 'Donations', 'Homepage', User Homepage'.**
+
 ## Features
 
 - Users may register, login, logout.
